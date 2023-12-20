@@ -1,12 +1,20 @@
+import express, { Application, Request, Response } from 'express';
+import cors from 'cors';
+import { studentRoutes } from './app/modules/students/student.route';
+const app: Application = express();
 
-const express = require('express')
-const app = express()
-const port = 3000
+// parser
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.json());
+app.use(cors());
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// Application Routes
+app.use('/api/v1/students', studentRoutes);
+
+const getAController = (req: Request, res: Response) => {
+  const a= 10;
+  res.send(a);
+};
+app.get('/', getAController);
+
+export default app;
