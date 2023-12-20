@@ -2,16 +2,18 @@
 import bcrypt from 'bcrypt'
 import { Schema, model } from 'mongoose';
 
-import {
+// import {
 
-  TGuardian,
-  TLocalGuardian,
-  TStudent,
+//   TGuardian,
+//   TLocalGuardian,
+//   TStudent,
  
-  StudentModel,
-  TUserName,
-} from './students/student.interface';
-import config from '../config';
+//   StudentModel,
+//   TUserName,
+// } from './users/user.interface';
+
+import { StudentModel, TGuardian, TLocalGuardian, TStudent, TUserName } from './user.interface';
+import config from '../../config';
 
 
 const userNameSchema = new Schema<TUserName>({

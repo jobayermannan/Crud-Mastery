@@ -77,4 +77,4 @@ export const studentController = {
   getAllStudents,
   getSingleStudents,
   deleteStudent
-};
+}
